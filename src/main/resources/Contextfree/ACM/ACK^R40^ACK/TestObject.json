@@ -1,0 +1,9 @@
+{
+  "id" : 46774,
+  "name": "ACK^R40^ACK",
+  "description": "Context free test case for ACK^R40^ACK message",
+  "messageId": "5a4520c284ae939e4e93690b1234",
+  "valueSetLibraryId": "57a243d684ae5af0417e3f001234",
+  "constraintId": "57a243d684ae5af0417e3f001234",
+  "position": 2
+}

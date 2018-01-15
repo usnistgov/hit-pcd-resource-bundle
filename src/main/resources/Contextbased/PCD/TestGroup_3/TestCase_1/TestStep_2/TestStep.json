@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"57a243d684ae5af0417e3f001234","messageId":"5a45202784ae939e4e934ac81234","valueSetLibraryId":"57a243d684ae5af0417e3f001234"},"name":"PCD09_ACK_R01","description":"","id":600425637,"position":2,"type":"DATAINSTANCE","protocols":["soap"]}
