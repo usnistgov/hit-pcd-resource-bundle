@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5ba9064484ae9b7ee01e473f","messageId":"5a81af6984ae50488e8800a2","valueSetLibraryId":"5ba9064484ae9b7ee01e473f"},"name":"PCD04_ACK_R40","description":"AM responds with ACK message","id":-1748720403841935417,"position":2,"type":"SUT_RESPONDER","protocols":["mllp"]}

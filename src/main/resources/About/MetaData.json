@@ -1,15 +1,15 @@
 {
-  "version" : "1.0.0-SuperBeta",
-  "name" : "PCD Test Suite",
-  "domain" : "",
-  "adminEmail" : "crouzier@nist.gov",
-  "description" : "No Description",
-  "header" : "",
-  "homeTitle" : "Welcome to the NIST PCD Suite!",
-  "homeContent" : "",
-  "rsbVersion" : "${project.version}-${ts}",
-  "fileUpload":{
-	  "contentTypes" : "application/xml,text/xml,text/plain",
-	  "maxSize": "10MB"
-	}
+  "domains": [		
+    {
+			"key": "pcd13",
+			"position": 1,
+			"rsbVersion"	:"${project.version}-${ts}",
+			"version"		: "${metadata.version}",
+			"igVersion"		:"",
+			"scope": "GLOBAL",
+			"name": "PCD Cycle 13",
+			"homeTitle": "Welcome to the NIST PCD Suite!",
+			"authorUsername":"nico"
+ 		}
+	]
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="5baa9bf984aec0d2011eb98f" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Tue Sep 25 16:35:05 EDT 2018" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+  <Constraints>
+    <Message>
+      <ByID ID="5a81af6984ae50488e8800ac">
+        <Constraint ID="Content" Target="1[1].15[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="MSH[1].15[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at MSH-15 (Accept Acknowledgment Type) does not match the expected value: 'AL'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="1[1].15[1]" Text="AL"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="1[1].16[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="MSH[1].16[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at MSH-16 (Application Acknowledgment Type) does not match the expected value: 'NE'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="1[1].16[1]" Text="NE"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="4[1].1[1].1[1].3[1].1[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PATIENT_RESULT[1].PATIENT[1].PID[1].3[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Expected content is missing. The empty value at PATIENT_RESULT.PATIENT.PID-3.1 (ID Number) is expected to be present.</Description>
+          <Assertion>
+            <Presence Path="4[1].1[1].1[1].3[1].1[1]"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="4[1].1[1].1[1].3[1].1[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PATIENT_RESULT[1].PATIENT[1].PID[1].3[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at PATIENT_RESULT.PATIENT.PID-3.1 (ID Number) does not match the expected value: 'HO2009001'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="4[1].1[1].1[1].3[1].1[1]" Text="HO2009001"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+    </Message>
+  </Constraints>
+</ConformanceContext>

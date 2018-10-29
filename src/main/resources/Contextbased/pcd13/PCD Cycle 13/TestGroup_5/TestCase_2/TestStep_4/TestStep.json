@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5ba9064484ae9b7ee01e473f","messageId":"5a81af6984ae50488e8800ad","valueSetLibraryId":"5ba9064484ae9b7ee01e473f"},"name":"PCD03_ACK_O16","description":"","id":3982413168461740240,"position":4,"type":"SUT_RESPONDER","protocols":["mllp"]}

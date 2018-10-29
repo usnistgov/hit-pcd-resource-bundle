@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5ba9064484ae9b7ee01e473f","messageId":"5a81af6984ae50488e8800ae","valueSetLibraryId":"5ba9064484ae9b7ee01e473f"},"name":"PCD04_ORU_R40","description":"AR sends data to AM","id":-7186214782473964880,"position":1,"type":"TA_INITIATOR","protocols":["mllp"]}

@@ -1,0 +1,10 @@
+[
+			 {
+			 	 "protocol":"mllp",
+			 	 "description":"MLLP Protocol",
+ 			 	 "forms":{
+			 	 		"TA_INITIATOR":"TA_INITIATOR_MLLP_FORM.html",
+			 	 		"SUT_INITIATOR":"SUT_INITIATOR_MLLP_FORM.html"
+			 	 }
+			 }
+]

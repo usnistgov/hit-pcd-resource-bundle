@@ -1,0 +1,77 @@
+
+
+
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback': 
+	taInitiatorForm_pcd13_mllp.appnamespaceid.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.appnamespaceid.$invalid}">
+	<label for='appnamespaceid' class='col-md-2 control-label'>Application Namespace ID:(MSH-3.1)</label>
+	<div class='controls col-md-6'>
+		<input type='text' class='form-control' ng-model='config.appnamespaceid'
+			name='appnamespaceid' id='appnamespaceid'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.appuniversalid.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.appuniversalid.$invalid}">
+	<label for='appuniversalid' class='col-md-2 control-label'>Application Universal ID:(MSH-3.2)</label>
+	<div class='controls col-md-6'>
+		<input type='text' class='form-control' name='appuniversalid'  
+			id='appuniversalid' ng-model='config.appuniversalid'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.appuniversaltype.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.appuniversaltype.$invalid}">
+	<label for='appuniversaltype' class='col-md-2 control-label'>Application Universal Type:(MSH-3.3)</label>
+	<div class='controls col-md-6'>
+		<input class='form-control' name='appuniversaltype'
+			id='appuniversaltype' type='text' ng-model='config.appuniversaltype'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.facilitynamespaceid.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.facilitynamespaceid.$invalid}">
+	<label for='facilitynamespaceid' class='col-md-2 control-label'>Facility Namespace ID:(MSH-4.1)</label>
+	<div class='controls col-md-6'>
+		<input type='text' class='form-control' ng-model='config.facilitynamespaceid'
+			name='facilitynamespaceid' id='facilitynamespaceid'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.facilityuniversalid.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.facilityuniversalid.$invalid}">
+	<label for='facilityuniversalid' class='col-md-2 control-label'>Facility Universal ID:(MSH-4.2)</label>
+	<div class='controls col-md-6'>
+		<input type='text' class='form-control' name='facilityuniversalid'
+			id='facilityuniversalid' ng-model='config.facilityuniversalid'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.facilityuniversaltype.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.facilityuniversaltype.$invalid}">
+	<label for='facilityuniversaltype' class='col-md-2 control-label'>Facility Universal Type:(MSH-4.3)</label>
+	<div class='controls col-md-6'>
+		<input class='form-control' name='facilityuniversaltype'
+			id='facilityuniversaltype' type='text' ng-model='config.facilityuniversaltype'>
+	</div>
+</div>
+<div class='form-group control-group' ng-class="{'has-success
+	has-feedback':
+	taInitiatorForm_pcd13_mllp.iptInput.$valid && taInitiatorForm_pcd13_mllp.portInput.$valid, 'base-has-error
+	has-feedback':taInitiatorForm_pcd13_mllp.iptInput.$invalid || taInitiatorForm_pcd13_mllp.portInput.$invalid}">
+	<label for='endpointInput' class='col-md-2 control-label'>Endpoint IP and port</label>
+	<div class='controls col-md-6'>
+			<input name='iptInput' placeholder="ip" id='ipInput' type='text'
+			class='form-control' ng-model='config.ip'>		
+			<input name='portInput' placeholder="port" id='portInput'
+			class='form-control' ng-model='config.port'>		
+	</div>
+	
+	
+</div>

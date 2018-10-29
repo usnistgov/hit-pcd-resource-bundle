@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5ba9064484ae9b7ee01e473f","messageId":"5a81af6984ae50488e8800b1","valueSetLibraryId":"5ba9064484ae9b7ee01e473f"},"name":"PCD03_RGV_O15","description":"","id":8093328592379382821,"position":1,"type":"SUT_INITIATOR","protocols":["mllp"]}

@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5ba9064484ae9b7ee01e473f","messageId":"5a81af6984ae50488e8800b2","valueSetLibraryId":"5ba9064484ae9b7ee01e473f"},"name":"PCD10_ORU_R42","description":"","id":-6746868389961647046,"position":1,"type":"SUT_INITIATOR","protocols":["mllp"]}
