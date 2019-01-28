@@ -1,0 +1,41 @@
+Instructions to run the NIST HL7v2 PCD tool
+===========================================
+
+Software needed
+---------------
+Tomcat v8 or newer
+And up-to-date MySQL server
+(optional) Database management software (MySQLWorkbench)
+
+
+MySQL
+-----
+Create a user with rights to create tables <pcduser>. with a password <pcdpassword>
+With this user create two schemas:
+  -pcd 
+  -pcd_account
+
+Tomcat
+------
+1)
+Configure the conf/context.xml file in the tomcat directory.
+Add the following configuration before the </Context> tag (replace with your own MySQL username and password. Change the MySQL url if not running locally)
+
+<Resource name="jdbc/base_tool_account_jndi" auth="Container" type="javax.sql.DataSource"
+ maxActive="100" maxIdle="30" maxWait="10000" factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+ username="pcduser" password="pcdpassword" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/pcd_account"/>
+
+ <Resource name="jdbc/base_tool_jndi" auth="Container" type="javax.sql.DataSource"
+ maxActive="100" maxIdle="30" maxWait="10000" factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+ username="pcduser" password="pcdpassword" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/pcd"/>
+
+2)
+Put tool war file in the webapps directory
+
+3)
+Start Tomcat
+Default tool address is http://localhost:8080/pcdtool
+
+
+Having issues or trouble?
+contact help at: nicolas.crouzier@nist.gov 

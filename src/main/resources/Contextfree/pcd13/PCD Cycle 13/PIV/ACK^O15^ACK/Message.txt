@@ -1,0 +1,2 @@
+MSH|^~\&|SendingApplication|SendingFacility|ReceivingApplication|ReceivingFacility|20110923164106-0500||ACK^O15^ACK|NIST-110923164106602|P|2.6|||AL|NE
+MSA|CA|19

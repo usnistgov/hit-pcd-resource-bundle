@@ -1,9 +1,43 @@
 <style>
 .home-page-panel {
-	height: 350px;
+	height: 240px;
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 }
+
+@media (max-width: 1810px) {
+  .home-page-panel {
+	height: 260px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	}
+}
+
+@media (max-width: 1520px) {
+  .home-page-panel {
+	height: 300px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	}
+}
+
+@media (max-width: 1365px) {
+  .home-page-panel {
+	height: 340px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	}
+}
+
+@media (max-width: 1205px) {
+  .home-page-panel {
+	height: 400px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	}
+}
+
+
 
 .panel-heading {
 	padding: 10px 15px;
@@ -11,7 +45,6 @@
 	border-top-right-radius: 0px;
 	border-top-left-radius: 0px;
 }
-
 @media screen and (min-width: 1768px) {
 	.home-page-panel-content-with-header {
 		max-height: 295px !important;
@@ -19,7 +52,6 @@
 		text-align: left;
 	}
 }
-
 @media screen and (max-width: 1768px) {
 	.home-page-panel-content-with-header {
 		max-height: 280px !important;
@@ -27,7 +59,6 @@
 		text-align: left;
 	}
 }
-
 @media screen and (max-width: 1233px) {
 	.home-page-panel-content-with-header {
 		max-height: 280px !important;
@@ -35,7 +66,6 @@
 		text-align: left;
 	}
 }
-
 @media screen and (max-width: 1183px) {
 	.home-page-panel-content-with-header {
 		max-height: 260px !important;
@@ -43,82 +73,59 @@
 		text-align: left;
 	}
 }
-
-
 .home-page-panel-content {
-	max-height: 300px !important;
+	/* max-height: 300px !important; */
 	overflow: auto;
 	text-align: left;
 }
-
 .redhome {
 	color: red;
 }
 </style>
-<div class="panel-body">
-	<div style="text-align: left">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="panel panel-primary home-page-panel">
-					<div class="panel-heading">
-						
-					</div>
-					<div class="panel-body">
-						<div class="home-page-panel-content">
-							
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="panel panel-primary home-page-panel">
-					<div class="panel-heading">
-						
-					</div>
-					<div class="panel-body">
-						<div class="home-page-panel-content-with-header home-page-onc">
-							
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="panel panel-primary home-page-panel">
-					<div class="panel-heading">
-						
-					</div>
-					<div class="panel-body">
-						<div class="home-page-panel-content">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="panel panel-primary home-page-panel">
-					<div class="panel-heading">
-						<span style="font-size: 14px; font-weight: bold">Supported
-							Browsers</span>
-					</div>
-					<div class="panel-body">
-						<div class="home-page-panel-content">
-							<p style="text-align: left">The following browsers are
-								supported:</p>
-							<ul>
-								<li><i class="fa fa-chrome"></i> Chrome <span
-									class="redhome">(Recommended)</span></li>
-								<li><i class="fa fa-firefox"></i> Firefox <span
-									class="redhome">(Recommended)</span></li>
-								<li><i class="fa fa-safari"></i> Safari</li>
-								<li><i class="fa fa-internet-explorer"></i> IE 9+</li>
-							</ul>						
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
+<div style="text-align: left">
+  <div class="row equal"> 
+    <div class="col-md-8"> 
+      <div class="panel panel-primary home-page-panel"> 
+        <div class="panel-heading"> 
+          <span style="font-size: 14px; font-weight: bold">About the tool</span> 
+        </div> 
+        <div class="panel-body"> 
+          <div class="home-page-panel-content"> 
+            <p style="text-align: left">Welcome to the Integrating the Healthcare Enterprise (IHE) Patient Care Device (PCD) Testing Tool.</p>
+			<p>This tool was developed by the National Institute of Standards and Technology (NIST) to support testing of the IHE PCD Test Cases for Health Level 7 (HL7) Version 2 (v2).</p>
+			<p>User registration is recommended but not required; you can use the tool as a "guest" user. However registration is required to save your customized settings. Click-on "Register" in the upper-right corner menu of this page for self-registration.</p>             
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    
+ 
+ 
+    <div class="col-md-4"> 
+      <div class="panel panel-primary home-page-panel"> 
+        <div class="panel-heading"> 
+					<span style="font-size: 14px; font-weight: bold">Supported 
+						Browsers</span> 
+        </div> 
+        <div class="panel-body"> 
+          <div class="home-page-panel-content"> 
+            <p style="text-align: left">The following browsers are 
+              supported: 
+            <ul> 
+              <li><i class="fa fa-chrome"></i> Chrome <span 
+                style="color: red">(Recommended)</span></li> 
+              <li><i class="fa fa-firefox"></i> Firefox <span 
+                style="color: red">(Recommended)</span></li> 
+              <li><i class="fa fa-safari"></i> Safari</li> 
+              <li><i class="fa fa-internet-explorer"></i> IE 9+</li> 
+ 
+            </ul> 
+            </p> 
+ 
+          </div> 
+        </div> 
+ 
+      </div> 
+    </div> 
+  </div> 
+  

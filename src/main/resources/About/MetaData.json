@@ -3,8 +3,8 @@
     {
 			"key": "pcd13",
 			"position": 1,
-			"rsbVersion"	:"${project.version}-${ts}",
-			"version"		: "${metadata.version}",
+			"rsbVersion"	:"1.0.0",
+			"version"		: "1.0.0-beta",
 			"igVersion"		:"",
 			"scope": "GLOBAL",
 			"name": "PCD Cycle 13",

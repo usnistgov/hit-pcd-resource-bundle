@@ -1,0 +1,9 @@
+{
+  "id" : 418809,
+  "name": "ORU^R01^ORU^R01",
+  "description": "Context free test case for ORU^R01^ORU^R01 message",
+  "messageId": "5a81af6984ae50488e8800ac",
+  "valueSetLibraryId": "5c117b5c84ae84c788182133",
+  "constraintId": "5c117b5c84ae84c788182133",
+  "position": 1
+}

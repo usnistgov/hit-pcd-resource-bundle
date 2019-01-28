@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" UUID="5be0dca784aeb311e252039a" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+  <MetaData Date="Mon Nov 05 19:13:27 EST 2018" Name="Contextbased Constrations" OrgName="NIST" Status="Draft" Version="No Version Info"/>
+  <Constraints>
+    <Message>
+      <ByID ID="5a81af6984ae50488e8800ac">
+        <Constraint ID="Content" Target="1[1].15[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="MSH[1].15[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at MSH-15 (Accept Acknowledgment Type) does not match the expected value: 'AL'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="1[1].15[1]" Text="AL"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="1[1].16[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="MSH[1].16[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed"/>
+          <Description>Invalid content (based on test case fixed data). The value at MSH-16 (Application Acknowledgment Type) does not match the expected value: 'NE'.</Description>
+          <Assertion>
+            <PlainText IgnoreCase="true" Path="1[1].16[1]" Text="NE"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="4[1].1[1].1[1].3[1].1[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PATIENT_RESULT[1].PATIENT[1].PID[1].3[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed List"/>
+          <Description>Expected content is missing. The empty value at PATIENT_RESULT.PATIENT.PID-3.1 (ID Number) is expected to be present.</Description>
+          <Assertion>
+            <Presence Path="4[1].1[1].1[1].3[1].1[1]"/>
+          </Assertion>
+        </Constraint>
+        <Constraint ID="Content" Target="4[1].1[1].1[1].3[1].1[1]">
+          <Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)" ReferencePath="PATIENT_RESULT[1].PATIENT[1].PID[1].3[1].1[1]" Source="testcase" TestDataCategorization="Value-Test Case Fixed List"/>
+          <Description>Invalid content (based on test case fixed data). The value at PATIENT_RESULT.PATIENT.PID-3.1 (ID Number) does not match one of the expected values: HO2009001,HO2009002,HO2009003,HO2009004,2010001,2010002,2010003,2010004,2010005,2010006</Description>
+          <Assertion>
+            <StringList CSV="HO2009001,HO2009002,HO2009003,HO2009004,2010001,2010002,2010003,2010004,2010005,2010006" Path="4[1].1[1].1[1].3[1].1[1]"/>
+          </Assertion>
+        </Constraint>
+      </ByID>
+    </Message>
+    <Segment>
+    		<ByID ID="PID_PCD">
+				
+				
+				<Constraint ID="HO2009001_CHECK">
+					<Description>Check patient HO2009001 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="HO2009001" IgnoreCase="false"/>							
+							 <FORALL>
+								 <PlainText Path="5[1].1[1].1[1]" Text="Hon" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Albert" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Adams" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610101" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="M" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="15 N Saguaro" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85701" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="HO2009002_CHECK">
+					<Description>Check patient HO2009002 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="HO2009002" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Hon" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Charles" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Brooks" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610201" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="M" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="3015 E Sagebrush" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85712" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="HO2009003_CHECK">
+					<Description>Check patient HO2009003 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="HO2009003" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Hon" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Amy" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Coburn" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610301" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="5615 S Palo Verde" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85706" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="HO2009004_CHECK">
+					<Description>Check patient HO2009004 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="HO2009004" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Hon" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Carrie" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Davidson" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610401" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="515 W Cholla" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85719" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="2010001_CHECK">
+					<Description>Check patient 2010001 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010001" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Smith" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Albert" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Adams" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610101" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="M" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="60 N Saguaro" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85701" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="2010002_CHECK">
+					<Description>Check patient 2010002 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010002" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Smith" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Charles" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Brooks" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610201" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="M" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="3060 E Sagebrush" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85712" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="2010003_CHECK">
+					<Description>Check patient 2010003 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010003" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Smith" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Amy" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Coburn" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610301" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="5660 S Palo Verde" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85706" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="2010004_CHECK">
+					<Description>Check patient 2010004 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010004" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Smith" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Carrie" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Davidson" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="19610401" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="560 W Cholla" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Tucson" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="85719" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>				
+				<Constraint ID="2010005_CHECK">
+					<Description>Check patient 2010005 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010005" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Doe" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="Baby" IgnoreCase="true"/>
+				                <PlainText Path="6[1]" Text="Smith" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="20171102" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="100 Main St" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Irving" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="75063" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="2010006_CHECK">
+					<Description>Check patient 2010006 information</Description>
+					<Assertion>
+						<IMPLY>
+                					<PlainText Path="3[1].1[1]" Text="2010006" IgnoreCase="false"/>							
+							 <FORALL>
+								<PlainText Path="5[1].1[1].1[1]" Text="Rogers" IgnoreCase="true"/>
+				                <PlainText Path="5[1].2[1].1[1]" Text="John" IgnoreCase="true"/>
+				                <PlainText Path="7[1]" Text="20171104" IgnoreCase="true"/>
+				                <PlainText Path="8[1]" Text="F" IgnoreCase="true"/>
+				                <PlainText Path="11[1].1[1].1[1]" Text="1300 Walnut Hill ln" IgnoreCase="true"/>
+				                <PlainText Path="11[1].3[1]" Text="Irving" IgnoreCase="true"/>
+				                <PlainText Path="11[1].5[1]" Text="75038" IgnoreCase="true"/>														 
+							</FORALL>							
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+						
+				
+			</ByID>
+    </Segment>
+  </Constraints>
+</ConformanceContext>
