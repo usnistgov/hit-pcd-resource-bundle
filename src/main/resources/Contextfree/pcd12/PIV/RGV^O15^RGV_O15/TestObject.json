@@ -1,9 +1,0 @@
-{
-  "id" : 2999,
-  "name": "RGV^O15^RGV_O15",
-  "description": "Context free test case for RGV^O15^RGV_O15 message",
-  "messageId": "5a4bfc9484aef4028b71494f1234",
-  "valueSetLibraryId": "57a243d684ae5af0417e3f001234",
-  "constraintId": "57a243d684ae5af0417e3f001234",
-  "position": 1
-}

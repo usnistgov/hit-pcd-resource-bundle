@@ -1,9 +1,0 @@
-{
-  "id" : 58524,
-  "name": "ORU^R40^ORU_R40",
-  "description": "Context free test case for ORU^R40^ORU_R40 message",
-  "messageId": "5a328e8a84aec05fed001fd71234",
-  "valueSetLibraryId": "57a243d684ae5af0417e3f001234",
-  "constraintId": "57a243d684ae5af0417e3f001234",
-  "position": 1
-}
