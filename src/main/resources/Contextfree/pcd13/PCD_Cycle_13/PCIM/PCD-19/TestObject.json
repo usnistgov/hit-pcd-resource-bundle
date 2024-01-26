@@ -1,0 +1,9 @@
+{
+  "id" : "123456789100019",
+  "name": "PCD-19 QSB^Z66^QSB_Q16",
+  "description": "Context free test case for QSB^Z66^QSB_Q16 message",
+  "messageId": "63063c738b87bc0007cd67ff",
+  "valueSetLibraryId": "5e9db8452af19b000654dbbd",
+  "constraintId": "5e9db8452af19b000654dbbd",
+  "position": 3
+}

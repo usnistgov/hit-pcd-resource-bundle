@@ -17,8 +17,7 @@
       </ByID>
       <ByID ID="PL_PCD">
         <Predicate ID="undefined-6" Target="6[1]" TrueUsage="O" FalseUsage="X">
-          <Description>FORALL[If PL.1 (Point of Care) is not valued][If PL.2 (Room) is not valued][If PL.3 (Bed) is not valued][If PL.4 (Facility) is not valued][If PL.5 (Location Status) is not valued][If PL.7 (Building) is not valued][If PL.8 (Floor) is not
-            valued][If PL.9 (Location Description) is not valued][If PL.10 (Comprehensive Location Identifier) is not valued][If PL.11 (Assigning Authority for Location) is not valued]</Description>
+          <Description>FORALL[If PL.1 (Point of Care) is not valued][If PL.2 (Room) is not valued][If PL.3 (Bed) is not valued][If PL.4 (Facility) is not valued][If PL.5 (Location Status) is not valued][If PL.7 (Building) is not valued][If PL.8 (Floor) is not valued][If PL.9 (Location Description) is not valued][If PL.10 (Comprehensive Location Identifier) is not valued][If PL.11 (Assigning Authority for Location) is not valued]</Description>
           <Condition>
             <FORALL>
               <NOT>
@@ -737,7 +736,7 @@
           </Assertion>
         </Constraint>
       </ByID>
-      <ByID ID="OBR_PCD_PCD-04">
+      <!-- <ByID ID="OBR_PCD_PCD-04">
         <Constraint ID="OBR_PCD_PCD-04_4">
           <Description>The value of OBR-4 is '196616^MDC_EVT_ALARM^MDC'.</Description>
           <Assertion>
@@ -747,7 +746,7 @@
             </AND>
           </Assertion>
         </Constraint>
-      </ByID>
+      </ByID> -->
       <ByID ID="MSH_PCD_PCD-15">
         <Constraint ID="MSH_PCD_1" Target="1[1]">
           <Description>The value of MSH-1(Field Separator) SHALL be '|'.</Description>

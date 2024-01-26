@@ -1,0 +1,9 @@
+{
+	"id": 8910002350,
+	"name": "WCTP generic testing",
+	"description": "WCTP generic context free testing",
+	"wctp": {
+		"option": "yes"
+	},
+	"position": 1
+}

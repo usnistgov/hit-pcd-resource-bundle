@@ -1,0 +1,3 @@
+MSH|^~\&|SendingApplication^80ABC123^EUI-64|SendingFacility|ReceivingApplication|ReceivingFacility|20220825173945.748-0000||QSB^Z66^QSB_Q16|754|P|2.6|||AL|NE|USA||||IHE_PCD_019^IHE_PCD^1.3.6.1.4.1.19376.1.6.1.19.1^ISO
+QPD|Q66^Device-Patient Subscription^HL7005||@PRT.10.2^EQ^E65F01FFFE32A7CE
+RCP|I||B||N

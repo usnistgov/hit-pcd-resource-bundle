@@ -1,0 +1,9 @@
+{
+  "id" : "123456789100017",
+  "name": "PCD-17 ORU^R01^ORU_R01",
+  "description": "Context free test case for ORU^R01^ORU_R01 message",
+  "messageId": "6304d47b8b87bc0007fc5083",
+  "valueSetLibraryId": "5e9db8452af19b000654dbbd",
+  "constraintId": "5e9db8452af19b000654dbbd",
+  "position": 1
+}

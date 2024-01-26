@@ -1,0 +1,9 @@
+{
+  "id" : "123456789100020",
+  "name": "PCD-20 MFN^M14^MFN_PRT",
+  "description": "Context free test case for MFN^M14^MFN_PRT message",
+  "messageId": "63064d328b87bc0007559b0a",
+  "valueSetLibraryId": "5e9db8452af19b000654dbbd",
+  "constraintId": "5e9db8452af19b000654dbbd",
+  "position": 4
+}
