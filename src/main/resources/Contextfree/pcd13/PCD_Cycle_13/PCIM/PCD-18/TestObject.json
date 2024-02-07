@@ -3,7 +3,7 @@
   "name": "PCD-18 ORU^R01^ORU_R01",
   "description": "Context free test case for ORU^R01^ORU_R01 message",
   "messageId": "630634838b87bc0007cc533d",
-  "valueSetLibraryId": "5e9db8452af19b000654dbbd",
-  "constraintId": "5e9db8452af19b000654dbbd",
+  "valueSetLibraryId": "221cb326-4ad1-48a1-8e85-6f648d8a077e",
+  "constraintId": "2544a393-c15d-4ef4-ad49-4a445bb3dcc2",
   "position": 2
 }

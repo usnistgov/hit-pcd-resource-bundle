@@ -3,7 +3,7 @@
   "name": "PCD-20 MFN^M14^MFN_PRT",
   "description": "Context free test case for MFN^M14^MFN_PRT message",
   "messageId": "63064d328b87bc0007559b0a",
-  "valueSetLibraryId": "5e9db8452af19b000654dbbd",
-  "constraintId": "5e9db8452af19b000654dbbd",
+  "valueSetLibraryId": "221cb326-4ad1-48a1-8e85-6f648d8a077e",
+  "constraintId": "2544a393-c15d-4ef4-ad49-4a445bb3dcc2",
   "position": 4
 }

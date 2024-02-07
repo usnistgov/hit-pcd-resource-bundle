@@ -1,0 +1,9 @@
+{
+  "id" : 37693200102,
+  "name": "ORU^R45^ORU_45",
+  "description": "Context free test case for ORU^R45^ORU_R45 message",
+  "messageId": "65aadb4e8b87bc000720eb37",
+  "valueSetLibraryId": "221cb326-4ad1-48a1-8e85-6f648d8a077e",
+  "constraintId": "2544a393-c15d-4ef4-ad49-4a445bb3dcc2",
+  "position": 1
+}
