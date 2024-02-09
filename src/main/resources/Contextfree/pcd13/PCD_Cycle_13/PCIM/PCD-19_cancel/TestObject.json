@@ -1,0 +1,10 @@
+{
+  "id" : "1234567891000192",
+  "name": "DEV-19 QSX^J66^QSX_J01 (cancel subscription)",
+  "description": "Context free test case for QSX^J66^QSX_J01 message",
+  "messageId": "65c3f46b8b87bc000664d62f",
+  "valueSetLibraryId": "a0de7d6a-e9c1-43a6-8bb6-2f16a14a978c",
+  "constraintId": "7ac093e8-a277-4b6a-9067-bcc5c689bb67",
+  "valueSetBindingsId": "7b5dcc38-8558-4780-9a9c-72f1d64c8aec",
+  "position": 4
+}

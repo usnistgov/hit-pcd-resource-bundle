@@ -1,8 +1,8 @@
 {
-  "id" : 4533958921,
-  "name": "ACK^R44^ACK",
-  "description": "Context free test case for ACK^R44^ACK message",
-  "messageId": "65b3f9858b87bc00070cf3ff",
+  "id" : "123456789100052",
+  "name": "DEV-52 ORU^R01^ORU_R01",
+  "description": "Context free test case for ORU^R01^ORU_R01 message",
+  "messageId": "65c3eb278b87bc00065d65f0",
   "valueSetLibraryId": "a0de7d6a-e9c1-43a6-8bb6-2f16a14a978c",
   "constraintId": "7ac093e8-a277-4b6a-9067-bcc5c689bb67",
   "valueSetBindingsId": "7b5dcc38-8558-4780-9a9c-72f1d64c8aec",

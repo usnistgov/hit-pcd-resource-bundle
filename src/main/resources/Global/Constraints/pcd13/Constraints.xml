@@ -1,6 +1,6 @@
 <ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd"
-    UUID="2544a393-c15d-4ef4-ad49-4a445bb3dcc2">
+    UUID="7ac093e8-a277-4b6a-9067-bcc5c689bb67">
     <MetaData Name="PCD Revision 9.0 2024" OrgName="IHE" Version="2.6" Date="No Date Info" />
     <Predicates>
         <Datatype>
@@ -20,30 +20,12 @@
     </Predicates>
     <Constraints>
         <Datatype>
-            <ByID ID="DTM_2-8-2">
+            <ByID ID="DTM">
                 <Constraint ID="DTM_DateTimeConstraint">
                     <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
                     <Assertion>
                         <Format Path="."
                             Regex="^(\d{4}|\d{6}|\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})?$" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="DTM_2-7">
-                <Constraint ID="DTM_DateTimeConstraint">
-                    <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
-                    <Assertion>
-                        <Format Path="."
-                            Regex="^(\d{4}|\d{6}|\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})?$" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="TM">
-                <Constraint ID="TM_DateTimeConstraint">
-                    <Description>The value SHALL follow the Date/Time pattern 'HH[MM[SS[.S[S[S[S]]]]]][+/-ZZZZ]'.</Description>
-                    <Assertion>
-                        <Format Path="."
-                            Regex="^(\d{2}|\d{4}|\d{6}|\d{6}\.\d|\d{6}\.\d{2}|\d{6}\.\d{3}|\d{6}\.\d{4})([+-]\d{4})?$" />
                     </Assertion>
                 </Constraint>
             </ByID>
@@ -64,7 +46,25 @@
                     </Assertion>
                 </Constraint>
             </ByID>
-            <ByID ID="DTM">
+            <ByID ID="TM">
+                <Constraint ID="TM_DateTimeConstraint">
+                    <Description>The value SHALL follow the Date/Time pattern 'HH[MM[SS[.S[S[S[S]]]]]][+/-ZZZZ]'.</Description>
+                    <Assertion>
+                        <Format Path="."
+                            Regex="^(\d{2}|\d{4}|\d{6}|\d{6}\.\d|\d{6}\.\d{2}|\d{6}\.\d{3}|\d{6}\.\d{4})([+-]\d{4})?$" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="DTM_2-7">
+                <Constraint ID="DTM_DateTimeConstraint">
+                    <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
+                    <Assertion>
+                        <Format Path="."
+                            Regex="^(\d{4}|\d{6}|\d{8}|\d{10}|\d{12}|\d{14}|\d{14}\.\d|\d{14}\.\d{2}|\d{14}\.\d{3}|\d{14}\.\d{4})([+-]\d{4})?$" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="DTM_2-8-2">
                 <Constraint ID="DTM_DateTimeConstraint">
                     <Description>The value SHALL follow the Date/Time pattern 'YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ]'.</Description>
                     <Assertion>
@@ -75,7 +75,257 @@
             </ByID>
         </Datatype>
         <Segment>
-            <ByID ID="PRT_PCD18_2-8-2">
+            <ByID ID="MSH_PCD">
+                <Constraint ID="MSH_PCD-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="MSH_ACK_R45">
+                <Constraint ID="MSH_ACK45-9.2" Strength="SHALL">
+                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R45' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].2[1]" Text="R45" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-9.3" Strength="SHALL">
+                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ACK' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].3[1]" Text="ACK" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'NE' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="15[1]" Text="NE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-16" Strength="SHALL">
+                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'. </Description>
+                    <Assertion>
+                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-9.1" Strength="SHALL">
+                    <Description> MSH-9.1 (Message Code) shall contain the value 'ACK' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].1[1]" Text="ACK" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_ACK45-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="MSH_DEV52">
+                <Constraint ID="MSH_DEV51-9.2" Strength="SHALL">
+                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R01'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].2[1]" Text="R01" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-9.3" Strength="SHALL">
+                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R01'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].3[1]" Text="ORU_R01" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
+                    <Assertion>
+                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-9.1" Strength="SHALL">
+                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-21" Strength="SHALL">
+                    <Description>( At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  AND At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.52.1' (Case Sensitive).  )</Description>
+                    <Assertion>
+                        <AND>
+                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
+                                AtLeastOnce="true" NotPresentBehavior="PASS" />
+                            <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.52.1"
+                                IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
+                        </AND>
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="OBR_DEV_51">
+                <Constraint ID="OBR_DEV51_4" Strength="SHALL">
+                    <Description>(  OBR-4.1 (Identifier) shall contain the value '69136' (Case Sensitive).  AND  OBR-4.2 (Text) shall contain the value 'MDC_OBS_ASSOCIATION_PATIENT_DEVICE' (Case Sensitive).  AND  OBR-4.3 (Name of Coding System) shall contain the value 'MDC' (Case Sensitive).  )</Description>
+                    <Assertion>
+                        <FORALL>
+                            <PlainText Path="4[1].1[1]" Text="69136" IgnoreCase="false"
+                                NotPresentBehavior="PASS" />
+                            <PlainText Path="4[1].3[1]" Text="MDC" IgnoreCase="false"
+                                NotPresentBehavior="PASS" />
+                            <PlainText Path="4[1].2[1]" Text="MDC_OBS_ASSOCIATION_PATIENT_DEVICE"
+                                IgnoreCase="false" NotPresentBehavior="PASS" />
+                        </FORALL>
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="MSH_PCD16">
+                <Constraint ID="MSH_PCD16-9.2" Strength="SHALL">
+                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R45' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].2[1]" Text="R45" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD16-9.3" Strength="SHALL">
+                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R45' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].3[1]" Text="ORU_R45" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD16-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
+                    <Assertion>
+                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD16-16" Strength="SHALL">
+                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'. </Description>
+                    <Assertion>
+                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD16-9.1" Strength="SHALL">
+                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD16-21" Strength="SHALL">
+                    <Description>( At least one occurrence of MSH-21.3 (Universal ID) shall contain one of the values in the list: ['1.3.6.1.4.1.19376.1.6.4.16','1.3.6.1.4.1.19376.1.6.1.16.1'] (Case Sensitive).  AND At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  )</Description>
+                    <Assertion>
+                        <AND>
+                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
+                                AtLeastOnce="true" NotPresentBehavior="PASS" />
+                            <StringList Path="21[*].3[1]"
+                                CSV="1.3.6.1.4.1.19376.1.6.4.16,1.3.6.1.4.1.19376.1.6.1.16.1"
+                                IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
+                        </AND>
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_PCD-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="MSH_DEV51">
+                <Constraint ID="MSH_DEV51-9.2" Strength="SHALL">
+                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R01'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].2[1]" Text="R01" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-9.3" Strength="SHALL">
+                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R01'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].3[1]" Text="ORU_R01" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
+                    <Assertion>
+                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-9.1" Strength="SHALL">
+                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-21" Strength="SHALL">
+                    <Description>( At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  AND At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.51.1' (Case Sensitive).  )</Description>
+                    <Assertion>
+                        <AND>
+                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
+                                AtLeastOnce="true" NotPresentBehavior="PASS" />
+                            <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.51.1"
+                                IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
+                        </AND>
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV51-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="PRT_PCD17_2-8-2">
                 <Constraint ID="PRT_PCD_PCIM_2" Strength="SHALL">
                     <Description> PRT-2 (Action Code) shall contain the value 'UC'. </Description>
                     <Assertion>
@@ -147,316 +397,60 @@
                     </Assertion>
                 </Constraint>
             </ByID>
-            <ByID ID="MSH_PCD17">
-                <Constraint ID="MSH_PCD01-9.2" Strength="SHALL">
-                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R01'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].2[1]" Text="R01" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.3" Strength="SHALL">
-                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R01'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].3[1]" Text="ORU_R01" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD17-15" Strength="SHALL">
-                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
-                    <Assertion>
-                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.1" Strength="SHALL">
-                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-21" Strength="SHALL">
-                    <Description>( ( At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.17.1'.  OR At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.17.1'.  ) AND At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO'.  )</Description>
-                    <Assertion>
-                        <AND>
-                            <OR>
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.17.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.17.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            </OR>
-                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
-                                AtLeastOnce="true" NotPresentBehavior="PASS" />
-                        </AND>
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-1" Strength="SHALL">
-                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
-                    <Assertion>
-                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-2" Strength="SHALL">
-                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MSH_PCD18">
-                <Constraint ID="MSH_PCD01-9.2" Strength="SHALL">
-                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R01'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].2[1]" Text="R01" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.3" Strength="SHALL">
-                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R01'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].3[1]" Text="ORU_R01" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD18-15" Strength="SHALL">
-                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
-                    <Assertion>
-                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.1" Strength="SHALL">
-                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD18-21" Strength="SHALL">
-                    <Description>( ( At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.18.1'.  OR At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.18.1'.  ) AND At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO'.  )</Description>
-                    <Assertion>
-                        <AND>
-                            <OR>
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.18.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.18.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            </OR>
-                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
-                                AtLeastOnce="true" NotPresentBehavior="PASS" />
-                        </AND>
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-1" Strength="SHALL">
-                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
-                    <Assertion>
-                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-2" Strength="SHALL">
-                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MSH_PCD19">
-                <Constraint ID="MSH_PCD01-9.2" Strength="SHALL">
+            <ByID ID="MSH_DEV19">
+                <Constraint ID="MSH_DEV19-9.2" Strength="SHALL">
                     <Description> MSH-9.2 (Trigger Event) shall contain the value 'Z66'. </Description>
                     <Assertion>
                         <PlainText Path="9[1].2[1]" Text="Z66" IgnoreCase="false"
                             NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD01-9.3" Strength="SHALL">
+                <Constraint ID="MSH_DEV19-9.3" Strength="SHALL">
                     <Description> MSH-9.3 (Message Structure) shall contain the value 'QSB_Q16'. </Description>
                     <Assertion>
                         <PlainText Path="9[1].3[1]" Text="QSB_Q16" IgnoreCase="false"
                             NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD19-21" Strength="SHALL">
-                    <Description>( ( At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.19.1'.  OR At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.19.1'.  ) AND At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO'.  )</Description>
+                <Constraint ID="MSH_DEV19-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL' (Case Sensitive). </Description>
                     <Assertion>
-                        <AND>
-                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
-                                AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            <OR>
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.19.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.19.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            </OR>
-                        </AND>
+                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD01-9.1" Strength="SHALL">
+                <Constraint ID="MSH_DEV19-16" Strength="SHALL">
+                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19-9.1" Strength="SHALL">
                     <Description> MSH-9.1 (Message Code) shall contain the value 'QSB'. </Description>
                     <Assertion>
                         <PlainText Path="9[1].1[1]" Text="QSB" IgnoreCase="false"
                             NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD-1" Strength="SHALL">
-                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
-                    <Assertion>
-                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-2" Strength="SHALL">
-                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MSH_ACK_R45">
-                <Constraint ID="MSH_ACK45-9.2" Strength="SHALL">
-                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R45' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].2[1]" Text="R45" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-9.3" Strength="SHALL">
-                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ACK' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].3[1]" Text="ACK" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-15" Strength="SHALL">
-                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'NE' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="15[1]" Text="NE" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-16" Strength="SHALL">
-                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'. </Description>
-                    <Assertion>
-                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-9.1" Strength="SHALL">
-                    <Description> MSH-9.1 (Message Code) shall contain the value 'ACK' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].1[1]" Text="ACK" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-1" Strength="SHALL">
-                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
-                    <Assertion>
-                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_ACK45-2" Strength="SHALL">
-                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MFI_PCD_PCIM">
-                <Constraint ID="MFI_PCD_PCIM_6" Strength="SHALL">
-                    <Description> MFI-6 (Response Level Code) shall contain the value 'NE'. </Description>
-                    <Assertion>
-                        <PlainText Path="6[1]" Text="NE" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MFI_PCD_PCIM_3" Strength="SHALL">
-                    <Description> MFI-3 (File-Level Event Code) shall contain the value 'UPD'. </Description>
-                    <Assertion>
-                        <PlainText Path="3[1]" Text="UPD" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="PRT_PCD17_2-8-2">
-                <Constraint ID="PRT_PCD_PCIM_2" Strength="SHALL">
-                    <Description> PRT-2 (Action Code) shall contain the value 'UC'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="UC" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="PRT_PCD_PCIM_4" Strength="SHALL">
-                    <Description>(  PRT-4.1 (Identifier) shall contain the value 'AUT'.  OR  PRT-4.1 (Identifier) shall contain the value 'EQUIP'.  OR  PRT-4.1 (Identifier) shall contain the value 'RO'.  )</Description>
-                    <Assertion>
-                        <EXIST>
-                            <PlainText Path="4[1].1[1]" Text="EQUIP" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                            <PlainText Path="4[1].1[1]" Text="RO" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                            <PlainText Path="4[1].1[1]" Text="AUT" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                        </EXIST>
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MSH_PCD16">
-                <Constraint ID="MSH_PCD16-9.2" Strength="SHALL">
-                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'R45' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].2[1]" Text="R45" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD16-9.3" Strength="SHALL">
-                    <Description> MSH-9.3 (Message Structure) shall contain the value 'ORU_R45' (Case Sensitive). </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].3[1]" Text="ORU_R45" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD16-15" Strength="SHALL">
-                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL'. </Description>
-                    <Assertion>
-                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD16-16" Strength="SHALL">
-                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE'. </Description>
-                    <Assertion>
-                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD16-9.1" Strength="SHALL">
-                    <Description> MSH-9.1 (Message Code) shall contain the value 'ORU'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].1[1]" Text="ORU" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD16-21" Strength="SHALL">
-                    <Description>( At least one occurrence of MSH-21.3 (Universal ID) shall contain one of the values in the list: ['1.3.6.1.4.1.19376.1.6.4.16','1.3.6.1.4.1.19376.1.6.1.16.1'] (Case Sensitive).  AND At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  )</Description>
+                <Constraint ID="MSH_DEV19-21" Strength="SHALL">
+                    <Description>( At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  AND At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.19.1' (Case Sensitive).  )</Description>
                     <Assertion>
                         <AND>
                             <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
                                 AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            <StringList Path="21[*].3[1]"
-                                CSV="1.3.6.1.4.1.19376.1.6.4.16,1.3.6.1.4.1.19376.1.6.1.16.1"
+                            <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.19.1"
                                 IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
                         </AND>
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD-1" Strength="SHALL">
+                <Constraint ID="MSH_DEV19-1" Strength="SHALL">
                     <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
                     <Assertion>
                         <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="MSH_PCD-2" Strength="SHALL">
+                <Constraint ID="MSH_DEV19-2" Strength="SHALL">
                     <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
                     <Assertion>
                         <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
@@ -464,7 +458,7 @@
                     </Assertion>
                 </Constraint>
             </ByID>
-            <ByID ID="OBX_PCD_PCIM">
+            <ByID ID="OBX_DEV_51">
                 <Constraint ID="OBX_PCD_PCIM_3" Strength="SHALL">
                     <Description>(  OBX-3.1 (Identifier) shall contain the value '68487'.  AND  OBX-3.2 (Text) shall contain the value 'MDC_ATTR_EVT_COND'.  AND  OBX-3.3 (Name of Coding System) shall contain the value 'MDC'.  )</Description>
                     <Assertion>
@@ -492,25 +486,64 @@
                     </Assertion>
                 </Constraint>
             </ByID>
-            <ByID ID="PRT_PCD20_2-8-2">
-                <Constraint ID="PRT_PCD_PCIM_2" Strength="SHALL">
-                    <Description> PRT-2 (Action Code) shall contain the value 'UC'. </Description>
+            <ByID ID="MSH_DEV19_2">
+                <Constraint ID="MSH_DEV19_2-9.2" Strength="SHALL">
+                    <Description> MSH-9.2 (Trigger Event) shall contain the value 'J66' (Case Sensitive). </Description>
                     <Assertion>
-                        <PlainText Path="2[1]" Text="UC" IgnoreCase="false"
+                        <PlainText Path="9[1].2[1]" Text="J66" IgnoreCase="false"
                             NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
-                <Constraint ID="PRT_PCD_PCIM_4" Strength="SHALL">
-                    <Description>(  PRT-4.1 (Identifier) shall contain the value 'AUT'.  OR  PRT-4.1 (Identifier) shall contain the value 'EQUIP'.  OR  PRT-4.1 (Identifier) shall contain the value 'RO'.  )</Description>
+                <Constraint ID="MSH_DEV19_2-9.3" Strength="SHALL">
+                    <Description> MSH-9.3 (Message Structure) shall contain the value 'QSX_J01' (Case Sensitive). </Description>
                     <Assertion>
-                        <EXIST>
-                            <PlainText Path="4[1].1[1]" Text="EQUIP" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                            <PlainText Path="4[1].1[1]" Text="RO" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                            <PlainText Path="4[1].1[1]" Text="AUT" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                        </EXIST>
+                        <PlainText Path="9[1].3[1]" Text="QSX_J01" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-15" Strength="SHALL">
+                    <Description> MSH-15 (Accept Acknowledgment Type) shall contain the value 'AL' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="15[1]" Text="AL" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-16" Strength="SHALL">
+                    <Description> MSH-16 (Application Acknowledgment Type) shall contain the value 'NE' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="16[1]" Text="NE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-21" Strength="SHALL">
+                    <Description>( At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO' (Case Sensitive).  AND At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.19.1' (Case Sensitive).  )</Description>
+                    <Assertion>
+                        <AND>
+                            <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.19.1"
+                                IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
+                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
+                                AtLeastOnce="true" NotPresentBehavior="PASS" />
+                        </AND>
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-9.1" Strength="SHALL">
+                    <Description> MSH-9.1 (Message Code) shall contain the value 'QSX' (Case Sensitive). </Description>
+                    <Assertion>
+                        <PlainText Path="9[1].1[1]" Text="QSX" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-1" Strength="SHALL">
+                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
+                    <Assertion>
+                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="MSH_DEV19_2-2" Strength="SHALL">
+                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
             </ByID>
@@ -519,6 +552,34 @@
                     <Description>ERROR CODE #1: NIST custom plugin to check for MDC validity.</Description>
                     <Assertion>
                         <Plugin QualifiedClassName="gov.nist.hit.pcd.custom.OBX_3" />
+                    </Assertion>
+                </Constraint>
+            </ByID>
+            <ByID ID="OBX_DEV_52">
+                <Constraint ID="OBX_PCD_PCIM_3" Strength="SHALL">
+                    <Description>(  OBX-3.1 (Identifier) shall contain the value '68487'.  AND  OBX-3.2 (Text) shall contain the value 'MDC_ATTR_EVT_COND'.  AND  OBX-3.3 (Name of Coding System) shall contain the value 'MDC'.  )</Description>
+                    <Assertion>
+                        <FORALL>
+                            <PlainText Path="3[1].1[1]" Text="68487" IgnoreCase="false"
+                                NotPresentBehavior="PASS" />
+                            <PlainText Path="3[1].3[1]" Text="MDC" IgnoreCase="false"
+                                NotPresentBehavior="PASS" />
+                            <PlainText Path="3[1].2[1]" Text="MDC_ATTR_EVT_COND" IgnoreCase="false"
+                                NotPresentBehavior="PASS" />
+                        </FORALL>
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="OBX_PCD_PCIM_3_MDC_Check" Strength="SHALL">
+                    <Description>ERROR CODE #1: NIST custom plugin to check for MDC validity.</Description>
+                    <Assertion>
+                        <Plugin QualifiedClassName="gov.nist.hit.pcd.custom.OBX_3" />
+                    </Assertion>
+                </Constraint>
+                <Constraint ID="OBX_PCD_PCIM_2" Strength="SHALL">
+                    <Description> OBX-2 (Value Type) shall contain the value 'CWE'. </Description>
+                    <Assertion>
+                        <PlainText Path="2[1]" Text="CWE" IgnoreCase="false"
+                            NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
             </ByID>
@@ -568,61 +629,6 @@
                             <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
                                 AtLeastOnce="true" NotPresentBehavior="PASS" />
                         </AND>
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-1" Strength="SHALL">
-                    <Description> MSH-1 (Field Separator) shall contain the value '|'. </Description>
-                    <Assertion>
-                        <PlainText Path="1[1]" Text="|" IgnoreCase="false" NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD-2" Strength="SHALL">
-                    <Description> MSH-2 (Encoding Characters) shall contain the value '^~\&amp;'. </Description>
-                    <Assertion>
-                        <PlainText Path="2[1]" Text="^~\&amp;" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-            </ByID>
-            <ByID ID="MSH_PCD20">
-                <Constraint ID="MSH_PCD01-9.2" Strength="SHALL">
-                    <Description>(  MSH-9.2 (Trigger Event) shall contain the value 'M13'.  OR  MSH-9.2 (Trigger Event) shall contain the value 'M14'.  )</Description>
-                    <Assertion>
-                        <OR>
-                            <PlainText Path="9[1].2[1]" Text="M13" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                            <PlainText Path="9[1].2[1]" Text="M14" IgnoreCase="false"
-                                NotPresentBehavior="PASS" />
-                        </OR>
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.3" Strength="SHALL">
-                    <Description> MSH-9.3 (Message Structure) shall contain the value 'MFN_PRT'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].3[1]" Text="MFN_PRT" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD20-21" Strength="SHALL">
-                    <Description>( At least one occurrence of MSH-21.4 (Universal ID Type) shall contain the value 'ISO'.  AND ( At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.20.1'.  OR At least one occurrence of MSH-21.3 (Universal ID) shall contain the value '1.3.6.1.4.1.19376.1.6.1.20.1'.  ) )</Description>
-                    <Assertion>
-                        <AND>
-                            <PlainText Path="21[*].4[1]" Text="ISO" IgnoreCase="false"
-                                AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            <OR>
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.20.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                                <PlainText Path="21[*].3[1]" Text="1.3.6.1.4.1.19376.1.6.1.20.1"
-                                    IgnoreCase="false" AtLeastOnce="true" NotPresentBehavior="PASS" />
-                            </OR>
-                        </AND>
-                    </Assertion>
-                </Constraint>
-                <Constraint ID="MSH_PCD01-9.1" Strength="SHALL">
-                    <Description> MSH-9.1 (Message Code) shall contain the value 'MFN'. </Description>
-                    <Assertion>
-                        <PlainText Path="9[1].1[1]" Text="MFN" IgnoreCase="false"
-                            NotPresentBehavior="PASS" />
                     </Assertion>
                 </Constraint>
                 <Constraint ID="MSH_PCD-1" Strength="SHALL">
