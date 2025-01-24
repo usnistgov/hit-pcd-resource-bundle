@@ -1,2 +1,0 @@
-MSH|^~\&|SendingApplication|SendingFacility|ReceivingApplication|ReceivingFacility|20121205100748-0500||ACK^R01^ACK|NIST-121205100748317|P|2.6|||NE|NE
-MSA|CA|6349029525714932151

@@ -1,1 +1,0 @@
-{"hl7v2":{"constraintId":"5c117b5c84ae84c788182133","messageId":"5a81af6984ae50488e8800af","valueSetLibraryId":"5c117b5c84ae84c788182133"},"name":"PCD01_ACK_R01","description":"DOC sends ACK to DOR","id":1651363911985917965,"position":2,"type":"TA_RESPONDER","protocols":["mllp"]}
