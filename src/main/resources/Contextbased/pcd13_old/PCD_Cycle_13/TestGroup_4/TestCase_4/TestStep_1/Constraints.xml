@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConformanceContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	UUID="5be0dcac84aeb311e25204c3"
+	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Jungyubw/NIST_healthcare_hl7_v2_profile_schema/master/Schema/NIST%20Validation%20Schema/ConformanceContext.xsd">
+	<MetaData Date="Mon Nov 05 19:13:32 EST 2018" Name="Contextbased Constrations" OrgName="NIST"
+		Status="Draft" Version="No Version Info" />
+	<Constraints>
+		<Segment>
+			<ByName Name="OBX">
+				<Constraint ID="MDC_ATTR_EVT_COND_check">
+					<Description>MDC_ATTR_EVT_COND check</Description>
+					<Assertion>
+						<IMPLY>
+							<PlainText Path="3[1].2[1]" Text="MDC_ATTR_EVT_COND" IgnoreCase="false" />
+							<EXIST>
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_DELIV_START"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_DELIV_STOP"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_DELIV_COMP"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_COMM_STATUS_CHANGE"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_PROG_CLEARED"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_AUTO_PROG_CLEARED"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PATIENT_CHANGE"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PATIENT_ID_CHANGE"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PATIENT_PARAMETER_CHANGE"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_VOL_COUNTERS_CLEARED"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_DEVICE_TIME_CHANGED"
+									IgnoreCase="false" />
+							</EXIST>
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+				<Constraint ID="START_check">
+					<Description>MDC_EVT_PUMP_DELIV_START check</Description>
+					<Assertion>
+						<IMPLY>
+							<PlainText Path="3[1].2[1]" Text="MDC_ATTR_EVT_COND" IgnoreCase="false" />
+							<FORALL>
+								<PlainText Path="5[1].1[1]" Text="197288" IgnoreCase="false" />
+								<PlainText Path="5[1].2[1]" Text="MDC_EVT_PUMP_DELIV_START"
+									IgnoreCase="false" />
+								<PlainText Path="5[1].3[1]" Text="MDC" IgnoreCase="false" />
+							</FORALL>
+						</IMPLY>
+					</Assertion>
+				</Constraint>
+			</ByName>
+		</Segment>
+		<Message>
+			<ByID ID="5a81af6984ae50488e8800b2">
+				<Constraint ID="Content" Target="1[1].15[1]">
+					<Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
+						ReferencePath="MSH[1].15[1]" Source="testcase"
+						TestDataCategorization="Value-Test Case Fixed" />
+					<Description>Invalid content (based on test case fixed data). The value at MSH-15 (Accept Acknowledgment Type) does not match the expected value: 'AL'.</Description>
+					<Assertion>
+						<PlainText IgnoreCase="true" Path="1[1].15[1]" Text="AL" />
+					</Assertion>
+				</Constraint>
+				<Constraint ID="Content" Target="1[1].16[1]">
+					<Reference GeneratedBy="Test Case Authoring &amp; Management Tool(TCAMT)"
+						ReferencePath="MSH[1].16[1]" Source="testcase"
+						TestDataCategorization="Value-Test Case Fixed List" />
+					<Description>Invalid content (based on test case fixed data). The value at MSH-16 (Application Acknowledgment Type) does not match one of the expected values: NE</Description>
+					<Assertion>
+						<StringList CSV="NE" Path="1[1].16[1]" />
+					</Assertion>
+				</Constraint>
+			</ByID>
+		</Message>
+	</Constraints>
+</ConformanceContext>

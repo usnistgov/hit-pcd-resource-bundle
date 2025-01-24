@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gov.nist.healthcare.pcd.pcdtool</groupId>
 	<artifactId>pcdtool-resource-bundle</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>pcdtool-resource-bundle</name>
 
 	<properties>

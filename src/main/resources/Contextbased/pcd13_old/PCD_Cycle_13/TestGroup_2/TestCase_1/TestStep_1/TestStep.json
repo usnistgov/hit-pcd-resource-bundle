@@ -1,0 +1,13 @@
+{
+  "hl7v2": {
+    "constraintId": "5c117b5c84ae84c788182133",
+    "messageId": "5a81af6984ae50488e8800ae",
+    "valueSetLibraryId": "5c117b5c84ae84c788182133"
+  },
+  "name": "PCD04_ORU_R40",
+  "description": "AR sends data to AM",
+  "id": 2701345075460715395,
+  "position": 1,
+  "type": "SUT_INITIATOR",
+  "protocols": ["mllp"]
+}

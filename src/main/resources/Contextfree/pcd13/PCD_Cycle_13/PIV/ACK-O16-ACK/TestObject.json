@@ -2,8 +2,9 @@
   "id" : 43145,
   "name": "ACK^O16^ACK",
   "description": "Context free test case for ACK^O16^ACK message",
-  "messageId": "5a81af6984ae50488e8800ad",
-  "valueSetLibraryId": "5c117b5c84ae84c788182133",
-  "constraintId": "5c117b5c84ae84c788182133",
+  "messageId": "65d3d61f8b87bc0007eafe49",
+   "valueSetLibraryId": "9be2d758-9ba3-474f-a584-6f0ad4ed513a",
+    "constraintId": "f19897b3-2e82-41e2-afdb-337d5d9d85d6",
+    "valueSetBindingsId": "217a84ed-052c-4425-b60c-7dbc5757c2f0",
   "position": 4
 }

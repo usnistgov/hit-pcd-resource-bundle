@@ -1,0 +1,1 @@
+{"hl7v2":{"constraintId":"5c117b5c84ae84c788182133","messageId":"5a81af6984ae50488e8800af","valueSetLibraryId":"5c117b5c84ae84c788182133"},"name":"PCD15_ACK_R01","description":"","id":-4381655285210553525,"position":2,"type":"TA_RESPONDER","protocols":["mllp"]}
