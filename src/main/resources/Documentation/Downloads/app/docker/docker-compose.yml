@@ -1,0 +1,40 @@
+services:
+  devices-dev-tomcat:
+    image:  nist775hit/devices-tool:latest
+    platform: linux/amd64
+    ports:
+      - "8099:8080"
+    depends_on:
+      devices-dev-mysql:
+        condition: service_healthy
+        restart: true
+    environment:
+      - JAVA_OPTS=-Xmx4096m -Xms4096m -DRELOAD_DB=true -DCACHE_AT_STARTUP=false -DIS_DEV_TOOL=true -Dpropfile=/tool_config/app-config.properties
+    restart: unless-stopped
+    volumes:
+      - ./tool_upload/:/tool_upload
+      - ./logs/:/usr/local/tomcat/logs
+      - type: bind
+        source: ./app-config.properties
+        target: /tool_config/app-config.properties
+        read_only: true
+    links:
+      - devices-dev-mysql:container-mysql
+
+  devices-dev-mysql:
+    image: nist775hit/devices-mysql:latest
+    platform: linux/amd64
+    ports:
+      - "3317:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root_password
+    restart: unless-stopped
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./db_config/my-custom.cnf:/etc/mysql/conf.d/my-custom.cnf:ro
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
