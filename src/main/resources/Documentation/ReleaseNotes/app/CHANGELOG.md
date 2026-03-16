@@ -1,5 +1,9 @@
 # NIST Devices/PCD Tool Changelog
 
+### [1.1.2] - 2025-09-30
+#### Changed
+* Added EI datatype to table 0125_PCD
+
 ### [1.1.1] - 2025-05-30
 #### Changed
 * Updated profile viewer with better version, displaying more info in a more consitent way.
